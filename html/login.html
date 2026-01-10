@@ -2,25 +2,27 @@
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
 <header>
-    <nav>
-        <a href="index.html">Home</a>
+     <nav>
+        <a href="../index.html">Home</a>
         <a href="product.html">Products</a>
         <a href="login.html">Login</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
     </nav>
 </header>
 
 <div class="container">
     <h2>Login</h2>
-
+    <!-- This is where JS call goes-->
     <form>
-        <label>Email</label>
-        <input type="email" placeholder="Enter email">
-
+        <form onsubmit="return showWelcomeMessage();">
+        <label>Username</label>
+        <input type="text" placeholder="Enter username" id="username">
         <label>Password</label>
         <input type="password" placeholder="Enter password">
 
@@ -29,8 +31,11 @@
 </div>
 
 <footer>
-    <p>© 2026 My E-Commerce Store</p>
+    <p>© 2026 EMC Online Store</p>
 </footer>
+
+<!-- Link external JS -->
+    <script src="../js/script.js"></script>
 
 </body>
 </html>
