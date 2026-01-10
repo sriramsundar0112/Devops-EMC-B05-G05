@@ -15,19 +15,37 @@ headings.forEach(h => {
     });
 });
 
+// Log to console
+console.log("script.js loaded");
+
+const form = document.getElementById("loginForm");
+const usernameInput = document.getElementById("username");
+
+// Safety check
+if (!form) {
+    console.error("❌ loginForm not found");
+}
+if (!usernameInput) {
+    console.error("❌ username input not found");
+}
+
+// Bind submit event to function
+form.addEventListener("submit", function (event) {
+    event.preventDefault(); // stop page reload
+    showWelcomeMessage();
+});
+
 function showWelcomeMessage() {
-            // Get value entered in username field
-            const username = document.getElementById("username").value;
+    console.log("Entered showWelcomeMessage method");
 
-            // Check if username is empty
-            if (username === "") {
-                alert("Please enter your username");
-                return false;
-            }
+    const username = usernameInput.value;
+    console.log("Entered username is:", username);
+    alert("Welcome  "+username)
 
-            // Show welcome popup
-            alert("Welcome " + username);
+    if (username === "") {
+        alert("Please enter your username");
+        return;
+    }
 
-            // Prevent actual form submission
-            return false;
-        }
+    alert("Welcome " + username);
+}
